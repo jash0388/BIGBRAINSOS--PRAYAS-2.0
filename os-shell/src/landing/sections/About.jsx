@@ -11,13 +11,13 @@ const About = () => {
     offset: ['start 0.8', 'end 0.2']
   });
 
-  const paragraphText = "Over the last seven years, I have worked with Parallax, a Berlin-based production house that crafts cinema, series, and Noir Studio in Paris. Together, we have created work that has earned international acclaim at several major festivals.";
+  const paragraphText = "Over the past several months, we have built BigBrainsOS from scratch to bring desktop-grade applications like VS Code, Terminal, and Chromium directly into your web browser without requiring any local installation or powerful hardware.";
   const chars = paragraphText.split('');
 
   const headingSegments = [
-    { text: "I am Marcus Chen, ", className: "font-normal" },
-    { text: "a self-taught director. ", className: "font-serif italic text-primary/90" },
-    { text: "I have skills in color grading, visual effects, and narrative design.", className: "font-normal" }
+    { text: "Built by Jashwanth Singh, ", className: "font-normal" },
+    { text: "N. Abhilash, ", className: "font-serif italic text-primary/90" },
+    { text: "and Yousuf Uddin.", className: "font-normal" }
   ];
 
   return (
@@ -26,7 +26,7 @@ const About = () => {
         
         {/* Label */}
         <span className="text-primary text-[10px] sm:text-xs uppercase tracking-widest font-bold mb-10">
-          Visual arts
+          Cloud Operating System
         </span>
 
         {/* Heading */}

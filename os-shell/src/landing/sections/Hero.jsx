@@ -26,7 +26,7 @@ const Hero = () => {
         {/* Navbar */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 z-50">
           <nav className="bg-black rounded-b-2xl md:rounded-b-3xl px-4 py-2 md:px-8 flex items-center gap-3 sm:gap-6 md:gap-12 lg:gap-14">
-            {['Our story', 'Collective', 'Workshops', 'Pricing', 'Inquiries'].map((item) => (
+            {['Features', 'Community', 'Apps', 'Pricing', 'Inquiries'].map((item) => (
               <Link 
                 key={item} 
                 to={item === 'Pricing' ? '/pricing' : '#'} 
@@ -48,9 +48,9 @@ const Hero = () => {
             {/* Giant Title (8 cols) */}
             <div className="md:col-span-8 text-[#E1E0CC]">
               <WordsPullUp 
-                text="Prisma" 
-                showAsterisk={true}
-                className="text-[26vw] sm:text-[24vw] md:text-[22vw] lg:text-[20vw] xl:text-[19vw] 2xl:text-[20vw] font-medium leading-[0.85] tracking-[-0.07em] justify-start"
+                text="BigBrains" 
+                showAsterisk={false}
+                className="text-[18vw] sm:text-[18vw] md:text-[16vw] lg:text-[14vw] xl:text-[13vw] 2xl:text-[14vw] font-medium leading-[0.85] tracking-[-0.07em] justify-start"
               />
             </div>
 
@@ -62,7 +62,7 @@ const Hero = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                Prisma is a worldwide network of visual artists, filmmakers and storytellers bound not by place, status or labels but by passion and hunger to unlock potential through our unique perspectives.
+                BigBrainsOS is a revolutionary cloud-native operating system that runs entirely inside your browser, unlocking unlimited computational potential anywhere.
               </motion.p>
 
               <motion.div
