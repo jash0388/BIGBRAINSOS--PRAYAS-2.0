@@ -16,9 +16,9 @@ websockify --web /usr/share/novnc 6082 localhost:5901 &
 # Wait a moment for X to start
 sleep 3
 
-# Launch Firefox
+# Launch Chrome
 export DISPLAY=:1
-firefox &
+google-chrome --no-sandbox --disable-gpu --start-maximized &
 
 # Keep container alive
 tail -f /dev/null
