@@ -15,9 +15,7 @@ const About = () => {
   const chars = paragraphText.split('');
 
   const headingSegments = [
-    { text: "Built by Jashwanth, ", className: "font-normal" },
-    { text: "N. Abhilash, Abhiram, ", className: "font-serif italic text-primary/90" },
-    { text: "and Yousuf Uddin.", className: "font-normal" }
+    { text: "Built by Jashwanth, N. Abhilash, Abhiram, and Yousuf Uddin.", className: "font-normal" }
   ];
 
   return (
