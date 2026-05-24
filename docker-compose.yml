@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  vscode:
+    build:
+      context: ./containers/vscode
+    container_name: bigbrains-vscode
+    ports:
+      - "6080:6080"
+    volumes:
+      - user-files:/home/ubuntu/Documents
+    environment:
+      - VNC_PASSWORD=bigbrains
+    restart: always
+
+  terminal:
+    build:
+      context: ./containers/terminal
+    container_name: bigbrains-terminal
+    ports:
+      - "6081:6081"
+    volumes:
+      - user-files:/home/ubuntu/Documents
+    environment:
+      - VNC_PASSWORD=bigbrains
+    restart: always
+
+  browser:
+    build:
+      context: ./containers/browser
+    container_name: bigbrains-browser
+    ports:
+      - "6082:6082"
+    volumes:
+      - user-files:/home/ubuntu/Documents
+    environment:
+      - VNC_PASSWORD=bigbrains
+    restart: always
+
+volumes:
+  user-files:

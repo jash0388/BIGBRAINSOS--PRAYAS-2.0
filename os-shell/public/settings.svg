@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8E8E93"/>
+      <stop offset="100%" stop-color="#636366"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="26" fill="url(#bg)"/>
+  <g transform="translate(60,60)">
+    <g fill="none" stroke="white" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="0" cy="0" r="12"/>
+      <circle cx="0" cy="0" r="4" fill="white"/>
+      <!-- gear teeth -->
+      <line x1="0" y1="-18" x2="0" y2="-28"/>
+      <line x1="0" y1="18" x2="0" y2="28"/>
+      <line x1="-18" y1="0" x2="-28" y2="0"/>
+      <line x1="18" y1="0" x2="28" y2="0"/>
+      <line x1="-12.7" y1="-12.7" x2="-19.8" y2="-19.8"/>
+      <line x1="12.7" y1="12.7" x2="19.8" y2="19.8"/>
+      <line x1="-12.7" y1="12.7" x2="-19.8" y2="19.8"/>
+      <line x1="12.7" y1="-12.7" x2="19.8" y2="-19.8"/>
+    </g>
+  </g>
+</svg>
