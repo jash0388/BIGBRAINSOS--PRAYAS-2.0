@@ -74,12 +74,19 @@ export const AnimatedLetter = ({ children, progress, index, total }) => {
   // Character fades in when scroll progress reaches its charProgress threshold
   const opacity = useTransform(
     progress,
-    [charProgress - 0.1, charProgress + 0.05],
-    [0.2, 1]
+    [charProgress - 0.2, charProgress],
+    [0.3, 1]
+  );
+  
+  // Also add a brightness/glow effect
+  const textShadow = useTransform(
+    progress,
+    [charProgress - 0.1, charProgress],
+    ["0px 0px 0px rgba(225,224,204,0)", "0px 0px 10px rgba(225,224,204,0.6)"]
   );
 
   return (
-    <motion.span style={{ opacity }} className="transition-opacity duration-100">
+    <motion.span style={{ opacity, textShadow }} className="transition-opacity duration-100">
       {children}
     </motion.span>
   );
