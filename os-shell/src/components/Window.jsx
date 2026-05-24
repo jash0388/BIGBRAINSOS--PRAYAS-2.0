@@ -26,9 +26,9 @@ const Window = ({ app, onClose, onMinimize, isMinimized }) => {
 
   // VNC URL with auto password
   const iframeUrl = {
-    'VS Code':   'http://localhost:6080/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
-    'Terminal':  'http://localhost:6081/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
-    'Browser':   'http://localhost:6082/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
+    'VS Code':   'https://veterans-sand-mails-combinations.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
+    'Terminal':  'https://mins-cargo-diabetes-narrow.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
+    'Browser':   'https://aquarium-allows-stage-inventory.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
   }[app.name] ?? null;
 
   // Inject CSS into the noVNC iframe to hide all UI chrome
