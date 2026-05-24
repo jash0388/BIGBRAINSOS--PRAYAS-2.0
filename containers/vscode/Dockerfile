@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     curl wget gnupg git \
     sudo \
     python3 \
-    python-is-python3
+    python-is-python3 \
+    firefox
 
 # Install VS Code
 RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
