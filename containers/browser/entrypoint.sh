@@ -9,7 +9,7 @@ sudo rm -rf /tmp/.X11-unix /tmp/.X*-lock
 vncserver :1 -geometry 1280x720 -depth 24 -name "bigbrainsOS"
 
 # Start noVNC with UI hidden
-sed -i 's/<\/head>/<style>body { margin: 0; background: transparent !important; } #noVNC_status_bar, #noVNC_control_bar, .noVNC_panel { display: none !important; }<\/style><\/head>/' /usr/share/novnc/vnc_lite.html
+sudo sed -i 's/<\/head>/<style>body { margin: 0; background: transparent !important; } #noVNC_status_bar, #noVNC_control_bar, .noVNC_panel { display: none !important; }<\/style><\/head>/' /usr/share/novnc/vnc_lite.html
 # Start noVNC web proxy in the background on port 6082
 websockify --web /usr/share/novnc 6082 localhost:5901 &
 

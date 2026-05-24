@@ -26,12 +26,12 @@ sleep 2
 DISPLAY=:1 xfconf-query --channel xfce4-session --property /general/LockCommand --create --type string --set "" 2>/dev/null || true
 
 # Launch VS Code maximized with no sandbox
-DISPLAY=:1 code --no-sandbox --user-data-dir=/home/ubuntu/.vscode-data --start-maximized &
+DISPLAY=:1 code --no-sandbox --disable-gpu --user-data-dir=/home/ubuntu/.vscode-data --start-maximized &
 
 sleep 2
 
 # Start noVNC with UI hidden
-sed -i 's/<\/head>/<style>body { margin: 0; background: transparent !important; } #noVNC_status_bar, #noVNC_control_bar, .noVNC_panel { display: none !important; }<\/style><\/head>/' /usr/share/novnc/vnc_lite.html
+sudo sed -i 's/<\/head>/<style>body { margin: 0; background: transparent !important; } #noVNC_status_bar, #noVNC_control_bar, .noVNC_panel { display: none !important; }<\/style><\/head>/' /usr/share/novnc/vnc_lite.html
 websockify --web /usr/share/novnc 6080 localhost:5901 &
 
 # Keep alive
