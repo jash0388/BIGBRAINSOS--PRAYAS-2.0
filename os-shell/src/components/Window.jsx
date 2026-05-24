@@ -25,11 +25,12 @@ const Window = ({ app, onClose, onMinimize, isMinimized }) => {
   };
 
   // VNC URL with auto password
-  const iframeUrl = {
-    'VS Code':   'https://veterans-sand-mails-combinations.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
-    'Terminal':  'https://mins-cargo-diabetes-narrow.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
-    'Browser':   'https://aquarium-allows-stage-inventory.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
-  }[app.name] ?? null;
+  const appUrls = {
+    'VS Code': 'https://protection-rotary-hollow-minor.trycloudflare.com/vnc.html?resize=remote&autoconnect=true&password=bigbrains',
+    'Terminal': 'https://enrolled-last-tokyo-resumes.trycloudflare.com/vnc.html?resize=remote&autoconnect=true&password=bigbrains',
+    'Browser': 'https://shelf-pour-arising-industrial.trycloudflare.com/vnc.html?resize=remote&autoconnect=true&password=bigbrains',
+  };
+  const iframeUrl = appUrls[app.name] ?? null;
 
   // Inject CSS into the noVNC iframe to hide all UI chrome
   const handleIframeLoad = useCallback(() => {
