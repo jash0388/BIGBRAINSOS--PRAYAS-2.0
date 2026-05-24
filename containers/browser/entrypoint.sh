@@ -1,6 +1,9 @@
 #!/bin/bash
-export USER=ubuntu
-export HOME=/home/ubuntu
+export USER=bigbrains
+export HOME=/home/bigbrains
+
+# Fix permissions for Docker volumes created by root
+sudo chown -R bigbrains:bigbrains /home/bigbrains/.config 2>/dev/null || true
 
 # Clear any old VNC locks
 sudo rm -rf /tmp/.X11-unix /tmp/.X*-lock
@@ -15,9 +18,6 @@ websockify --web /usr/share/novnc 6082 localhost:5901 &
 
 # Wait a moment for X to start
 sleep 3
-
-# Fix permissions for Docker volumes created by root
-sudo chown -R ubuntu:ubuntu /home/ubuntu/.config 2>/dev/null || true
 
 # Launch Chromium
 export DISPLAY=:1

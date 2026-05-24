@@ -1,13 +1,14 @@
-#!/bin/bash
-export USER=ubuntu
-export HOME=/home/ubuntu
+export USER=bigbrains
+export HOME=/home/bigbrains
+
+# Fix permissions for Docker volumes created by root before anything else
+sudo chown -R bigbrains:bigbrains /home/bigbrains/.vscode-data /home/bigbrains/.config 2>/dev/null || true
+
 export DISPLAY=:1
-export BROWSER=/bin/true
-export NO_AT_BRIDGE=1
 
 # Suppress all XFCE browser errors
-mkdir -p /home/ubuntu/.config/xfce4
-cat > /home/ubuntu/.config/xfce4/helpers.rc << 'EOF'
+mkdir -p /home/bigbrains/.config/xfce4
+cat > /home/bigbrains/.config/xfce4/helpers.rc << 'EOF'
 WebBrowser=custom-WebBrowser
 MailReader=custom-MailReader
 FileManager=custom-FileManager
@@ -25,14 +26,11 @@ sleep 2
 # Set XFCE to use a no-op browser to avoid popups
 DISPLAY=:1 xfconf-query --channel xfce4-session --property /general/LockCommand --create --type string --set "" 2>/dev/null || true
 
-# Fix permissions for Docker volumes created by root
-sudo chown -R ubuntu:ubuntu /home/ubuntu/.vscode-data /home/ubuntu/.config 2>/dev/null || true
-
 # Wait for X11
 sleep 3
 
 # Launch VS Code maximized with no sandbox
-DISPLAY=:1 code --no-sandbox --disable-gpu --user-data-dir=/home/ubuntu/.vscode-data --start-maximized &
+DISPLAY=:1 code --no-sandbox --disable-gpu --user-data-dir=/home/bigbrains/.vscode-data --start-maximized &
 
 # Start noVNC with UI hidden
 sudo sed -i 's/<\/head>/<style>body { margin: 0; background: transparent !important; } #noVNC_status_bar, #noVNC_control_bar, .noVNC_panel { display: none !important; }<\/style><\/head>/' /usr/share/novnc/vnc_lite.html

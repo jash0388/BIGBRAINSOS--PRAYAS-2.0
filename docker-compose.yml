@@ -8,9 +8,9 @@ services:
     ports:
       - "6080:6080"
     volumes:
-      - user-files:/home/ubuntu/Documents
-      - chromium-profile:/home/ubuntu/.config/chromium
-      - vscode-data:/home/ubuntu/.vscode-data
+      - user-files:/home/bigbrains/Documents
+      - chromium-profile:/home/bigbrains/.config/chromium
+      - vscode-data:/home/bigbrains/.vscode-data
     environment:
       - VNC_PASSWORD=bigbrains
     restart: always
@@ -22,8 +22,8 @@ services:
     ports:
       - "6081:6081"
     volumes:
-      - user-files:/home/ubuntu/Documents
-      - chromium-profile:/home/ubuntu/.config/chromium
+      - user-files:/home/bigbrains/Documents
+      - chromium-profile:/home/bigbrains/.config/chromium
     environment:
       - VNC_PASSWORD=bigbrains
     restart: always
@@ -35,8 +35,8 @@ services:
     ports:
       - "6082:6082"
     volumes:
-      - user-files:/home/ubuntu/Documents
-      - chromium-profile:/home/ubuntu/.config/chromium
+      - user-files:/home/bigbrains/Documents
+      - chromium-profile:/home/bigbrains/.config/chromium
     environment:
       - VNC_PASSWORD=bigbrains
     restart: always
