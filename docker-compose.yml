@@ -9,6 +9,8 @@ services:
       - "6080:6080"
     volumes:
       - user-files:/home/ubuntu/Documents
+      - chromium-profile:/home/ubuntu/.config/chromium
+      - vscode-data:/home/ubuntu/.vscode-data
     environment:
       - VNC_PASSWORD=bigbrains
     restart: always
@@ -21,6 +23,7 @@ services:
       - "6081:6081"
     volumes:
       - user-files:/home/ubuntu/Documents
+      - chromium-profile:/home/ubuntu/.config/chromium
     environment:
       - VNC_PASSWORD=bigbrains
     restart: always
@@ -33,9 +36,12 @@ services:
       - "6082:6082"
     volumes:
       - user-files:/home/ubuntu/Documents
+      - chromium-profile:/home/ubuntu/.config/chromium
     environment:
       - VNC_PASSWORD=bigbrains
     restart: always
 
 volumes:
   user-files:
+  chromium-profile:
+  vscode-data:

@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM debian:bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV USER=ubuntu
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     openbox xfce4-terminal \
     tightvncserver \
     novnc websockify \
-    curl wget sudo
+    curl wget sudo chromium
 
 # Setup user
 RUN useradd -m -s /bin/bash ubuntu && echo "ubuntu:ubuntu" | chpasswd && adduser ubuntu sudo

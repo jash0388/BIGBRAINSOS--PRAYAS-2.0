@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM debian:bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV USER=ubuntu
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     python3 \
     python-is-python3 \
-    firefox
+    chromium
 
 # Install VS Code
 RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && \
