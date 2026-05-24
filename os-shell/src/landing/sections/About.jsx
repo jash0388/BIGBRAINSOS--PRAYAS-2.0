@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useScroll } from 'framer-motion';
+import { useScroll, motion } from 'framer-motion';
 import { WordsPullUpMultiStyle, AnimatedLetter } from '../ui/Animations';
 
 const About = () => {
