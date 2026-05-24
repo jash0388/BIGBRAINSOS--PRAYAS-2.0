@@ -13,6 +13,9 @@ sudo sed -i 's/<\/head>/<style>body { margin: 0; background: transparent !import
 # Start noVNC web proxy in the background on port 6081
 websockify --web /usr/share/novnc 6081 localhost:5901 &
 
+# Fix permissions for Docker volumes created by root
+sudo chown -R ubuntu:ubuntu /home/ubuntu/.config 2>/dev/null || true
+
 # Wait a moment for X to start
 sleep 3
 

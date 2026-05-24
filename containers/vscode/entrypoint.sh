@@ -25,6 +25,9 @@ sleep 2
 # Set XFCE to use a no-op browser to avoid popups
 DISPLAY=:1 xfconf-query --channel xfce4-session --property /general/LockCommand --create --type string --set "" 2>/dev/null || true
 
+# Fix permissions for Docker volumes created by root
+sudo chown -R ubuntu:ubuntu /home/ubuntu/.vscode-data /home/ubuntu/.config 2>/dev/null || true
+
 # Wait for X11
 sleep 3
 
