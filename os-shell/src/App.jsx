@@ -1,6 +1,9 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import AuthPage from './pages/AuthPage';
 import Desktop from './components/Desktop';
+import LandingPage from './landing/LandingPage';
+import PricingPage from './landing/pages/PricingPage';
 
 const AppContent = () => {
   const { user, loading } = useAuth();
@@ -38,9 +41,18 @@ const AppContent = () => {
 function App() {
   return (
     <AuthProvider>
-      <div className="w-screen h-screen overflow-hidden">
-        <AppContent />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/os" element={
+            <div className="w-screen h-screen overflow-hidden">
+              <AppContent />
+            </div>
+          } />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>
     </AuthProvider>
   );
 }
