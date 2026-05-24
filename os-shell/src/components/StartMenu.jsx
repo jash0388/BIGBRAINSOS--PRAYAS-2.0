@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { desktopApps } from './Desktop';
+import { desktopApps } from '../appsConfig';
 
 const StartMenu = ({ isOpen, onClose, onOpenApp }) => {
   const [search, setSearch] = useState('');

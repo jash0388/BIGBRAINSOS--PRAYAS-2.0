@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { desktopApps } from './Desktop';
+import { desktopApps } from '../appsConfig';
 
 const dockApps = [
   { name: 'Launchpad', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Launchpad_Icon_%28macOS%29.png' },
