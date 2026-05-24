@@ -27,9 +27,12 @@ const AuthPage = ({ onSuccess }) => {
         }
         const { data, error } = await signUp(email, password, name);
         if (error) throw error;
-        if (data?.user && !data?.session) {
-          setMessage('Verify your account link sent to your email! Please check your inbox (and spam folder) to activate your account.');
-        } else {
+        
+        // If Supabase returns no error, the signup request was successful.
+        // We show the message. If it also returned a session, we can log them in.
+        setMessage('Verify your account link sent to your email! Please check your inbox (and spam folder) to activate your account.');
+        
+        if (data?.session) {
           onSuccess(data.user);
         }
       } else {
