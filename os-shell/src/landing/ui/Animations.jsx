@@ -71,22 +71,22 @@ export const WordsPullUpMultiStyle = ({ segments, className = "" }) => {
 
 export const AnimatedLetter = ({ children, progress, index, total }) => {
   const charProgress = index / total;
-  // Character fades in when scroll progress reaches its charProgress threshold
+  // Character fades in quickly, reaching full opacity much faster
   const opacity = useTransform(
     progress,
-    [charProgress - 0.2, charProgress],
-    [0.3, 1]
+    [charProgress * 0.5 - 0.1, charProgress * 0.5 + 0.1],
+    [0.4, 1]
   );
   
-  // Also add a brightness/glow effect
+  // Add a persistent brightness/glow effect
   const textShadow = useTransform(
     progress,
-    [charProgress - 0.1, charProgress],
-    ["0px 0px 0px rgba(225,224,204,0)", "0px 0px 10px rgba(225,224,204,0.6)"]
+    [charProgress * 0.5 - 0.1, charProgress * 0.5 + 0.1],
+    ["0px 0px 0px rgba(225,224,204,0)", "0px 0px 15px rgba(225,224,204,0.8)"]
   );
 
   return (
-    <motion.span style={{ opacity, textShadow }} className="transition-opacity duration-100">
+    <motion.span style={{ opacity, textShadow }} className="transition-opacity duration-300">
       {children}
     </motion.span>
   );

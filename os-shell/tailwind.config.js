@@ -10,8 +10,8 @@ export default {
         primary: '#DEDBC8',
       },
       fontFamily: {
-        sans: ['"Almarai"', 'sans-serif'],
-        serif: ['"Instrument Serif"', 'serif'],
+        sans: ['Almarai', 'sans-serif'],
+        serif: ['Instrument Serif', 'serif'],
       },
     },
   },

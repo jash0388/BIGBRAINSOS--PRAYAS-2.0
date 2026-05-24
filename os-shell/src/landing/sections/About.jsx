@@ -36,7 +36,7 @@ const About = () => {
 
         {/* Scroll-revealed Bio Paragraph */}
         <div ref={containerRef} className="max-w-3xl mx-auto">
-          <p className="text-[#E1E0CC] text-sm sm:text-base md:text-lg leading-relaxed tracking-wide text-justify md:text-center drop-shadow-[0_0_12px_rgba(225,224,204,0.4)]">
+          <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed tracking-wide text-justify md:text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
             {chars.map((char, i) => (
               <AnimatedLetter 
                 key={i} 
