@@ -22,8 +22,8 @@ WORKDIR /home/bigbrains
 RUN mkdir -p /home/bigbrains/.vnc
 RUN echo "bigbrains" | vncpasswd -f > /home/bigbrains/.vnc/passwd && chmod 600 /home/bigbrains/.vnc/passwd
 
-# Create xstartup for minimal WM (no panels)
-RUN echo "#!/bin/bash\nautocutsel -fork\nxrdb \$HOME/.Xresources\nxsetroot -solid transparent\nexport XKL_XMODMAP_DISABLE=1\nmkdir -p \$HOME/.config/openbox\necho '<?xml version=\"1.0\" encoding=\"UTF-8\"?><openbox_config><applications><application class=\"*\"><decor>no</decor><maximized>true</maximized></application></applications></openbox_config>' > \$HOME/.config/openbox/rc.xml\nopenbox-session &" > /home/bigbrains/.vnc/xstartup && chmod +x /home/bigbrains/.vnc/xstartup
+# Auto-start Openbox without window decorations and maximized for normal windows, but keep dialogs floating
+RUN echo "#!/bin/bash\nautocutsel -fork\nxrdb \$HOME/.Xresources\nxsetroot -solid transparent\nexport XKL_XMODMAP_DISABLE=1\nmkdir -p \$HOME/.config/openbox\necho '<?xml version=\"1.0\" encoding=\"UTF-8\"?><openbox_config><applications><application type=\"normal\"><decor>no</decor><maximized>true</maximized></application><application type=\"dialog\"><decor>yes</decor><maximized>false</maximized><layer>above</layer></application></applications></openbox_config>' > \$HOME/.config/openbox/rc.xml\nopenbox-session &" > /home/bigbrains/.vnc/xstartup && chmod +x /home/bigbrains/.vnc/xstartup
 
 COPY entrypoint.sh /entrypoint.sh
 RUN sudo chmod +x /entrypoint.sh
