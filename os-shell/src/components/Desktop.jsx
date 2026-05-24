@@ -3,6 +3,7 @@ import MenuBar from './MenuBar';
 import Dock from './Dock';
 import Window from './Window';
 import StartMenu from './StartMenu';
+import Updater from './Updater';
 
 const Desktop = () => {
   const [apps, setApps] = useState([]); // { ...appDef, id, minimized }
@@ -74,6 +75,8 @@ const Desktop = () => {
         onRestoreApp={restoreApp}
         onToggleStartMenu={() => setStartMenuOpen(s => !s)}
       />
+
+      <Updater />
     </div>
   );
 };
