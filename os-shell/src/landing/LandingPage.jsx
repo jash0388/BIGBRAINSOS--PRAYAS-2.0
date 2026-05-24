@@ -6,7 +6,7 @@ import ProblemSolution from './sections/ProblemSolution';
 
 const LandingPage = () => {
   return (
-    <div className="bg-black text-primary overflow-x-hidden h-screen overflow-y-auto">
+    <div className="bg-black font-sans text-primary overflow-x-hidden h-screen overflow-y-auto">
       <Hero />
       <About />
       <Features />

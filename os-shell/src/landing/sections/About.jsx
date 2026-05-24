@@ -36,18 +36,16 @@ const About = () => {
 
         {/* Scroll-revealed Bio Paragraph */}
         <div ref={containerRef} className="max-w-3xl mx-auto">
-          <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed tracking-wide text-justify md:text-center drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
-            {chars.map((char, i) => (
-              <AnimatedLetter 
-                key={i} 
-                progress={scrollYProgress} 
-                index={i} 
-                total={chars.length}
-              >
-                {char}
-              </AnimatedLetter>
-            ))}
-          </p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-white text-sm sm:text-base md:text-lg leading-relaxed tracking-wide text-justify md:text-center"
+            style={{ textShadow: "0px 0px 15px rgba(255,255,255,0.6)" }}
+          >
+            {paragraphText}
+          </motion.p>
         </div>
 
       </div>
