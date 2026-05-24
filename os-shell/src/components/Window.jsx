@@ -26,9 +26,10 @@ const Window = ({ app, onClose, onMinimize, isMinimized }) => {
 
   // VNC URL with auto password
   const appUrls = {
-    'VS Code': 'https://protection-rotary-hollow-minor.trycloudflare.com/vnc.html?resize=remote&autoconnect=true&password=bigbrains',
-    'Terminal': 'https://enrolled-last-tokyo-resumes.trycloudflare.com/vnc.html?resize=remote&autoconnect=true&password=bigbrains',
-    'Browser': 'https://shelf-pour-arising-industrial.trycloudflare.com/vnc.html?resize=remote&autoconnect=true&password=bigbrains',
+    'VS Code': 'https://protection-rotary-hollow-minor.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
+    'Terminal': 'https://enrolled-last-tokyo-resumes.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
+    'Browser': 'https://shelf-pour-arising-industrial.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
+    'Android Studio': 'https://preferences-bids-postcard-pittsburgh.trycloudflare.com/vnc_lite.html?resize=remote&autoconnect=true&password=bigbrains',
   };
   const iframeUrl = appUrls[app.name] ?? null;
 
@@ -182,7 +183,11 @@ const Window = ({ app, onClose, onMinimize, isMinimized }) => {
 
       {/* ── Content ─────────────────────────────────────────────────────── */}
       <div style={{ flex: 1, background: '#1e1e1e', position: 'relative', overflow: 'hidden' }}>
-        {iframeUrl ? (
+        {app.type === 'native' && app.Component ? (
+          <div className="w-full h-full bg-black/80 backdrop-blur-3xl overflow-hidden">
+            <app.Component />
+          </div>
+        ) : iframeUrl ? (
           <>
             {isLoading && (
               <div style={{ position:'absolute', inset:0, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', gap:14, background:'#1e1e1e', zIndex:5 }}>

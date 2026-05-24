@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
+import { desktopApps } from './Desktop';
+
 const dockApps = [
-  { name: 'Finder',     iconUrl: '/finder.svg' },
-  { name: 'Launchpad',  iconUrl: '/launchpad.svg' },
-  { name: 'VS Code',    iconUrl: '/vscode.svg' },
-  { name: 'Terminal',   iconUrl: '/terminal.svg' },
-  { name: 'Browser',    iconUrl: '/firefox.svg' },
-  { name: 'Settings',   iconUrl: '/settings.svg' },
+  { name: 'Launchpad', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Launchpad_Icon_%28macOS%29.png' },
+  ...desktopApps
 ];
 
 const DockIcon = ({ app, scale, yOffset, isOpen, isMinimized, onClick, onMouseEnter }) => (

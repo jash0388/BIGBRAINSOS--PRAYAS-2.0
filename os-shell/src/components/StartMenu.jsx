@@ -1,12 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const allApps = [
-  { name: 'VS Code', iconUrl: '/vscode.svg', desc: 'Code Editor' },
-  { name: 'Terminal', iconUrl: '/terminal.svg', desc: 'Command Line' },
-  { name: 'Browser', iconUrl: '/firefox.svg', desc: 'Web Browser' },
-  { name: 'Finder', iconUrl: '/finder.svg', desc: 'File Manager' },
-  { name: 'Settings', iconUrl: '/settings.svg', desc: 'System Preferences' },
-];
+import { desktopApps } from './Desktop';
 
 const StartMenu = ({ isOpen, onClose, onOpenApp }) => {
   const [search, setSearch] = useState('');
@@ -24,7 +18,7 @@ const StartMenu = ({ isOpen, onClose, onOpenApp }) => {
 
   if (!isOpen) return null;
 
-  const filtered = allApps.filter(app =>
+  const filtered = desktopApps.filter(app =>
     app.name.toLowerCase().includes(search.toLowerCase())
   );
 
