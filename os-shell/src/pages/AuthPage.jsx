@@ -96,7 +96,7 @@ const AuthPage = ({ onSuccess }) => {
           </div>
 
           <p className="text-white/20 text-xs mt-4">
-            Built by Jashwanth Singh · N. Abhilash · Yousuf Uddin
+            Built by Jashwanth Singh · N. Abhilash · Yousuf Uddin · Abhiram
           </p>
         </div>
       </div>
