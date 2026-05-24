@@ -18,7 +18,7 @@ sleep 3
 
 # Launch Chromium
 export DISPLAY=:1
-chromium --no-sandbox --disable-gpu --start-maximized &
+chromium --no-sandbox --disable-gpu --window-position=0,0 --window-size=1280,720 --start-maximized &
 
 # Keep container alive
 tail -f /dev/null

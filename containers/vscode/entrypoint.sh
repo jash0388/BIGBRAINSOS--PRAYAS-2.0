@@ -25,10 +25,11 @@ sleep 2
 # Set XFCE to use a no-op browser to avoid popups
 DISPLAY=:1 xfconf-query --channel xfce4-session --property /general/LockCommand --create --type string --set "" 2>/dev/null || true
 
+# Wait for X11
+sleep 3
+
 # Launch VS Code maximized with no sandbox
 DISPLAY=:1 code --no-sandbox --disable-gpu --user-data-dir=/home/ubuntu/.vscode-data --start-maximized &
-
-sleep 2
 
 # Start noVNC with UI hidden
 sudo sed -i 's/<\/head>/<style>body { margin: 0; background: transparent !important; } #noVNC_status_bar, #noVNC_control_bar, .noVNC_panel { display: none !important; }<\/style><\/head>/' /usr/share/novnc/vnc_lite.html
