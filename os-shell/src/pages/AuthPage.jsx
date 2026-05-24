@@ -28,7 +28,7 @@ const AuthPage = ({ onSuccess }) => {
         const { data, error } = await signUp(email, password, name);
         if (error) throw error;
         if (data?.user && !data?.session) {
-          setMessage('Check your email to confirm your account, then log in!');
+          setMessage('Verify your account link sent to your email! Please check your inbox (and spam folder) to activate your account.');
         } else {
           onSuccess(data.user);
         }
