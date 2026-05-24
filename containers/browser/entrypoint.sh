@@ -19,6 +19,9 @@ websockify --web /usr/share/novnc 6082 localhost:5901 &
 # Wait a moment for X to start
 sleep 3
 
+# Remove Chromium lock if it exists to prevent "profile in use" errors on restart
+rm -f /home/bigbrains/.config/chromium/Singleton* 2>/dev/null || true
+
 # Launch Chromium
 export DISPLAY=:1
 chromium --no-sandbox --disable-gpu --window-position=0,0 --window-size=1280,720 --start-maximized &

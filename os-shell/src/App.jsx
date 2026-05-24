@@ -16,8 +16,20 @@ const AppContent = () => {
     );
   }
 
+  const handleLoginSuccess = () => {
+    try {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.warn('Fullscreen request failed:', err);
+        });
+      }
+    } catch (e) {
+      console.error('Fullscreen API not supported', e);
+    }
+  };
+
   if (!user) {
-    return <AuthPage onSuccess={() => {}} />;
+    return <AuthPage onSuccess={handleLoginSuccess} />;
   }
 
   return <Desktop />;
